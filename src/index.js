@@ -1,10 +1,11 @@
 
 
+
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import loadScript from 'load-script'
 
-const SCRIPT = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG'
+const SCRIPT = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG'
 
 export default class extends Component {
   static propTypes = {
