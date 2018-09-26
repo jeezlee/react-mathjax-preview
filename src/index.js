@@ -1,4 +1,5 @@
 
+
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import loadScript from 'load-script'
@@ -52,7 +53,8 @@ export default class extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     this.preview.innerHTML = this.props.math
-    MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, this.preview])
+    // MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, this.preview])
+    this.state.loaded? MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, this.preview]): loadScript(SCRIPT, this.onLoad)
   }
 
   componentWillReceiveProps(nextProps) {
