@@ -1,8 +1,9 @@
+
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import loadScript from 'load-script'
 
-const SCRIPT = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_HTMLorMML'
+const SCRIPT = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_SVG'
 
 export default class extends Component {
   static propTypes = {
@@ -27,11 +28,12 @@ export default class extends Component {
     this.setState({
         loaded: true
     })
-    if (err)
+    if (err){
       console.log(err)
+    }
     else {
-      MathJax.Hub.Config({
-        showMathMenu: true,
+        MathJax.Hub.Config({jax: ["input/TeX", "output/SVG"],
+        showMathMenu: false,
         tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] },
       })
       window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, this.preview])
