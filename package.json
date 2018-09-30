@@ -1,6 +1,6 @@
 {
   "name": "react-mathjax-preview-svg",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The MathJax React component you were looking for.",
   "main": "lib/index.js",
   "module": "es/index.js",

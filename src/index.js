@@ -1,6 +1,8 @@
 
 
 
+
+
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import loadScript from 'load-script'
@@ -37,6 +39,10 @@ export default class extends Component {
         MathJax.Hub.Config({jax: ["input/TeX", "output/SVG"],
         showMathMenu: false,
         tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] },
+        SVG: {
+            useFontCache: false,
+            useGlobalCache: false
+        }
       })
       window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, this.preview])
     }
